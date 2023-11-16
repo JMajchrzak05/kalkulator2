@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="calculator">
+      <input type="text" id="display" value="wciśnij przycisk" />
+
+      <button id="clear" value="C" class="double">C</button
+      ><button id="dot" value="." class="single">.</button
+      ><button id="x" value="x" class="single">x</button>
+
+      <button id="seven" value="7" class="single">7</button
+      ><button id="eight" value="8" class="single">8</button
+      ><button id="nine" value="9" class="single">9</button
+      ><button id="minus" value="-" class="single">-</button>
+
+      <button id="four" value="4" class="single">4</button
+      ><button id="five" value="5" class="single">5</button
+      ><button id="six" value="6" class="single">6</button
+      ><button id="plus" value="+" class="single">+</button>
+
+      <button id="one" value="1" class="single">1</button>
+      <button id="two" value="2" class="single">2</button
+      ><button id="three" value="3" class="single">3</button
+      ><button id="divide" value="/" class="single">/</button>
+
+      <button id="zero" value="0" class="triple">0</button
+      ><button id="equal" value="=" class="single">=</button>
+
+      <!-- 
+        <input class="double" type="button" value="C" id="clear" />
+        <input class="single" type="button" value="." id="dot" />
+        <input class="single" type="button" value="x" id="x" />
+
+        <input class="single" type="button" value="7" id="seven" />
+        <input class="single" type="button" value="8" id="eight" />
+        <input class="single" type="button" value="9" id="nine" />
+        <input class="single" type="button" value="-" id="minus" />
+
+        <input class="single" type="button" value="4" id="four" />
+        <input class="single" type="button" value="5" id="five" />
+        <input class="single" type="button" value="6" id="six" />
+        <input class="single" type="button" value="+" id="plus" />
+
+        <input class="single" type="button" value="1" id="one" />
+        <input class="single" type="button" value="2" id="two" />
+        <input class="single" type="button" value="3" id="three" />
+        <input class="single" type="button" value="/" id="divide" />
+
+        <input class="triple" type="button" value="0" id="zero" />
+        <input class="single" type="button" value="=" id="equal" /> -->
+    </div>
+
+    <script>
+      const display = document.querySelector("#display");
+      const clear = document.querySelector("#clear");
+      const dot = document.querySelector("#dot");
+      const x = document.querySelector("#x");
+      const plus = document.querySelector("#plus");
+      const minus = document.querySelector("#minus");
+      const equal = document.querySelector("#equal");
+      const divide = document.querySelector("#divide");
+      const btn0 = document.querySelector("#zero");
+      const btn1 = document.querySelector("#one");
+      const btn2 = document.querySelector("#two");
+      const btn3 = document.querySelector("#three");
+      const btn4 = document.querySelector("#four");
+      const btn5 = document.querySelector("#five");
+      const btn6 = document.querySelector("#six");
+      const btn7 = document.querySelector("#seven");
+      const btn8 = document.querySelector("#eight");
+      const btn9 = document.querySelector("#nine");
+
+      let num1 = "";
+      let num2 = "";
+      let sign = "";
+      let wynik;
+
+      clear.addEventListener("click", (evt) => {
+        num1 = "";
+        num2 = "";
+        sign = "";
+        display.value = num2 + sign + num1;
+      });
+
+      btn0.addEventListener("click", (evt) => {
+        num1 += "0";
+        display.value = num2 + sign + num1;
+      });
+
+      btn1.addEventListener("click", (evt) => {
+        num1 += "1";
+        display.value = num2 + sign + num1;
+      });
+
+      btn2.addEventListener("click", (evt) => {
+        num1 += "2";
+        display.value = num2 + sign + num1;
+      });
+
+      btn3.addEventListener("click", (evt) => {
+        num1 += "3";
+        display.value = num2 + sign + num1;
+      });
+
+      btn4.addEventListener("click", (evt) => {
+        num1 += "4";
+        display.value = num2 + sign + num1;
+      });
+
+      btn5.addEventListener("click", (evt) => {
+        num1 += "5";
+        display.value = num2 + sign + num1;
+      });
+
+      btn6.addEventListener("click", (evt) => {
+        num1 += "6";
+        display.value = num2 + sign + num1;
+      });
+
+      btn7.addEventListener("click", (evt) => {
+        num1 += "7";
+        display.value = num2 + sign + num1;
+      });
+
+      btn8.addEventListener("click", (evt) => {
+        num1 += "8";
+        display.value = num2 + sign + num1;
+      });
+
+      btn9.addEventListener("click", (evt) => {
+        num1 += "9";
+        display.value = num2 + sign + num1;
+      });
+
+      dot.addEventListener("click", (evt) => {
+        num1 += ".";
+        display.value = num2 + sign + num1;
+      });
+
+      plus.addEventListener("click", (evt) => {
+        num2 = num1;
+        num1 = "";
+        sign = "+";
+        display.value = num2 + sign + num1;
+      });
+
+      minus.addEventListener("click", (evt) => {
+        num2 = num1;
+        num1 = "";
+        sign = "-";
+        display.value = num2 + sign + num1;
+      });
+
+      divide.addEventListener("click", (evt) => {
+        num2 = num1;
+        num1 = "";
+        sign = "/";
+        display.value = num2 + sign + num1;
+      });
+
+      x.addEventListener("click", (evt) => {
+        num2 = num1;
+        num1 = "";
+        sign = "*";
+        display.value = num2 + sign + num1;
+      });
+
+      equal.addEventListener("click", (evt) => {
+        switch (sign) {
+          case "+":
+            wynik = parseFloat(num2) + parseFloat(num1);
+            display.value = wynik;
+            break;
+          case "-":
+            wynik = parseFloat(num2) - parseFloat(num1);
+            display.value = wynik;
+            break;
+          case "*":
+            wynik = parseFloat(num2) * parseFloat(num1);
+            display.value = wynik;
+            break;
+          case "/":
+            wynik = parseFloat(num2) / parseFloat(num1);
+            if (num1 == 0) {
+              display.value = "NIE PRZEZ 0!!!";
+            } else {
+              display.value = wynik;
+            }
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>

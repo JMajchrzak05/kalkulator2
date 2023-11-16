@@ -1,0 +1,39 @@
+form, body  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    font-size: 32px;
+
+}
+.double {
+    width: 155px;
+    border-style: solid;
+}
+.single {
+    width: 75px;
+    border-style: solid;
+}
+.triple {
+    width: 235px;
+    border-style: solid;
+}
+
+#display {
+    width: 310px;
+    pointer-events: none;
+    background-color:rgb(244, 245, 171);
+    border-style: solid;
+    border-color: black;
+    border-radius: 15%;
+
+}
+
+#calculator {
+    background-color: gray;
+    padding: 5%;
+    border-radius: 5%;
+    border-style: solid;
+    border-color: black;
+}
